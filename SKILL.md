@@ -1,6 +1,6 @@
 ---
 name: env-inventory
-description: When designing new software, making tech choices, or planning architecture — automatically loads the local environment inventory and recommends reusing already-installed tools/SDKs/frameworks/project patterns instead of introducing new things. Triggers on: 设计软件、新项目、技术选型、架构设计、搭建、开发一个、build a、create a、design a、安装工具、装一个、pip install、npm install、依赖冲突、version conflict、已装了什么、what's already installed、already have、环境扫描、env scan.
+description: When designing new software, making tech choices, or planning architecture — automatically loads the local environment inventory and recommends reusing already-installed tools/SDKs/frameworks/project patterns instead of introducing new things. Triggers BEFORE acting: 设计软件、新项目、技术选型、架构设计、搭建、开发一个、build a、create a、design a、安装工具、装一个、pip install、npm install、已装了什么、what's already installed、already have、环境扫描、env scan. Note: dependency CONFLICTS (依赖冲突, version conflict) are post-hoc — rulehook's redundant-dependency rule handles pre-install prevention.
 ---
 
 # Environment Inventory Skill
@@ -28,7 +28,7 @@ Load the local environment inventory so I can recommend reusing already-installe
 ### Step 1: Refresh (smart — skips if < 24h old)
 
 ```bash
-python ~/.claude/tools/scan-env.py
+python "C:\Users\wuyu\.claude\tools\scan-env.py"
 ```
 
 The scanner auto-skips if inventory is less than 24 hours old. Force refresh: delete `C:\Users\wuyu\.claude\env-inventory.md` first.
